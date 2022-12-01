@@ -2,13 +2,12 @@
 //  gifLoader.swift
 //  PodcastApp
 //
-//  Created by Евгений Буракевич on 13.05.22.
+//  Created by Evgeny Burakevich on 13.05.22.
 //
 
 import UIKit
 import ImageIO
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
+
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):
@@ -19,8 +18,6 @@ fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     return false
   }
 }
-
-
 
 extension UIImage {
     

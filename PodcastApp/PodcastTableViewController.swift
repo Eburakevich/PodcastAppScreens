@@ -2,7 +2,7 @@
 //  PodcastTableViewController.swift
 //  PodcastApp
 //
-//  Created by Евгений Буракевич on 3.05.22.
+//  Created by Evgeny Burakevich on 3.05.22.
 //
 
 import UIKit

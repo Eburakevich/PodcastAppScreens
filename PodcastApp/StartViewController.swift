@@ -2,7 +2,7 @@
 //  StartViewController.swift
 //  PodcastApp
 //
-//  Created by Евгений Буракевич on 5.05.22.
+//  Created by Evgeny Burakevich on 5.05.22.
 //
 
 import UIKit
@@ -10,7 +10,6 @@ import UIKit
 
 
 class StartViewController: UIViewController, NameUserChancheListening, StartScreenActionResponsible {
-    
     
     var userInfoStart = UserInfo(name: nil)
     
@@ -34,7 +33,7 @@ class StartViewController: UIViewController, NameUserChancheListening, StartScre
       
         view = viewCustom
     viewCustom.delegateStart = self
-       viewCustom.delegateName = self
+    viewCustom.delegateName = self
         
     }
     override func viewDidLoad() {

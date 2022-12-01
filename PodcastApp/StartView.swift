@@ -2,7 +2,7 @@
 //  StartView.swift
 //  PodcastApp
 //
-//  Created by Евгений Буракевич on 5.05.22.
+//  Created by Evgeny Burakevich on 5.05.22.
 //
 import Foundation
 
@@ -13,22 +13,16 @@ protocol NameUserChancheListening: AnyObject {
 }
 protocol StartScreenActionResponsible: AnyObject {
     func addButtonDidTup()
-
-    
 }
 
 class StartView: UIView {
     
-    
     weak var delegateName: NameUserChancheListening?
     weak var delegateStart: StartScreenActionResponsible?
-    
     private let mainLabel = UILabel()
     private let buttonImage = UIImageView()
     private let buttonStarted = UIButton()
   
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubviews()
@@ -38,11 +32,8 @@ class StartView: UIView {
         configureButtonImage()
         configureMainLabel()
         configureNme()
-       
-      
       mainLabel.text = "Listen to Your Favorite Comedians"
-
-       buttonImage.image = UIImage(named: "кнопка")
+      buttonImage.image = UIImage(named: "button")
     }
     
     
@@ -52,7 +43,6 @@ class StartView: UIView {
 
     private func addSubviews() {
         addSubview(mainLabel)
-
         addSubview(buttonImage)
         addSubview(buttonStarted)
         addSubview(nameUser)

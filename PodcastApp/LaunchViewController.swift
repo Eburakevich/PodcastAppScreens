@@ -2,7 +2,7 @@
 //  LaunchViewController.swift
 //  PodcastApp
 //
-//  Created by Евгений Буракевич on 13.05.22.
+//  Created by Evgeny Burakevich on 13.05.22.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ class LaunchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        // Do any additional setup after loading the view.
+       
         let startGif = UIImage.gifImageWithName("micGif")
         imageView.image = startGif
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(3000)) {
@@ -27,16 +27,5 @@ class LaunchViewController: UIViewController {
         }
         
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

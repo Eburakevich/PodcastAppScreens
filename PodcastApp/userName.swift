@@ -2,7 +2,7 @@
 //  userName.swift
 //  PodcastApp
 //
-//  Created by Евгений Буракевич on 5.05.22.
+//  Created by Evgeny Burakevich on 5.05.22.
 //
 
 import Foundation

@@ -2,17 +2,15 @@
 //  MainView.swift
 //  PodcastApp
 //
-//  Created by Евгений Буракевич on 3.05.22.
+//  Created by Evgeny Burakevich on 3.05.22.
 //
 import Foundation
 
 import UIKit
 
 final class MainView: UIView {
-    
-
    weak var delegate: MainScreenActionResponsible?
-    weak var seeAllBottonDelegate: seeAllLinkDelegate?
+   weak var seeAllBottonDelegate: seeAllLinkDelegate?
     
  let headerLabel = UILabel()
     private let descriptionLabel = UILabel()
@@ -21,7 +19,6 @@ final class MainView: UIView {
     private let imageScroll = UIScrollView()
     private let imageStackViews = UIStackView()
     private let newEpisode = UILabel()
-//    private let seeAllButton = UIButton()
     private let popularButton = UIButton()
     private let recent = UIButton()
     private let featured = UIButton()
@@ -31,16 +28,10 @@ final class MainView: UIView {
     private let searchButton = UIButton()
     private let likeButton = UIButton()
     private let profileButton = UIButton()
-    
     let table2 = UITableView(frame: .zero, style: .plain)
-    
     private let billburr = UIImageView()
     private let comedians = UIImageView()
 
-    
-  
-
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubviews()
@@ -48,39 +39,26 @@ final class MainView: UIView {
         configureHeader()
         configureDescription()
         setupConstraints()
-        
-//        configureNewEpisodes()
         configureRecentButton()
         configureFeaturedButton()
         configureTrendingButton()
         configurePopuparButton()
-//        configureImageStackView()
-//        configureSeeAllButton()
         configureTupBar()
         configureHome()
         configureSearch()
         configureLike()
         configureProfile()
         configureTabBarButton()
-       
         configureGestures()
         configureGesturesImage()
-      
-       
         descriptionLabel.text = "Discover New Podcast"
         userImage.image = UIImage(named: "userImage")
         billburr.image = UIImage(named: "billburr")
         comedians.image = UIImage(named: "comedians")
-   
-        
-//        newEpisode.text = "New Episodes"
         headerLabel.text = "Hi, User"
         userImage.isUserInteractionEnabled = true
         headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         headerLabel.isUserInteractionEnabled = true
-       
-        
-        
     }
     
     private func configureGestures() {
@@ -91,13 +69,10 @@ final class MainView: UIView {
     }
     @objc private func headerLongDidTap(_ gesture: UILongPressGestureRecognizer) {
         headerLabel.trailingAnchor.constraint(equalTo: userImage.leadingAnchor, constant: -12).isActive = true
-     
     }
     @objc private func headerDidTap(_ gesture: UITapGestureRecognizer) {
         headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
     }
-
-    
     required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
@@ -105,8 +80,6 @@ final class MainView: UIView {
         addSubview(headerLabel)
         addSubview(descriptionLabel)
         addSubview(userImage)
-//        addSubview(newEpisode)
-//     addSubview(seeAllButton)
         addSubview(popularButton)
         addSubview(recent)
         addSubview(featured)
@@ -117,10 +90,6 @@ final class MainView: UIView {
         addSubview(table2)
         addSubview(billburr)
         addSubview(comedians)
-
-      
-    
-        
     }
     private func preconFigureSubviews() {
         subviews.forEach{ element in element.translatesAutoresizingMaskIntoConstraints = false }
@@ -129,62 +98,54 @@ final class MainView: UIView {
         setupHeaderLabel()
         setupDescriptionLabel()
         setupUserImageConstraint()
-
-       
         setupPopular()
         setupRecent()
         setupFeatured()
         setupTrending()
-
         setupTupBar()
         setupTupBarButtons()
         setupTable2()
         comicsConstraint()
         billburrConstraint()
-      
-
-   
     }
     
     private func setupTable2() {
         let TopConstraint = NSLayoutConstraint(
-            item: table2,
-            attribute: .top,
-            relatedBy: .equal,
-            toItem: descriptionLabel,
-            attribute: .bottom,
-            multiplier: 1,
-            constant: 260)
+        item: table2,
+        attribute: .top,
+        relatedBy: .equal,
+        toItem: descriptionLabel,
+        attribute: .bottom,
+        multiplier: 1,
+        constant: 260)
         let leadingConstraint = NSLayoutConstraint(
-            item: table2,
-            attribute: .leading,
-            relatedBy: .equal,
+        item: table2,
+        attribute: .leading,
+        relatedBy: .equal,
         toItem: self,
         attribute: .leading,
         multiplier: 1,
         constant: 0)
         let trailingConstraint = NSLayoutConstraint(
-            item: table2,
-            attribute: .trailing,
-            relatedBy: .equal,
+        item: table2,
+        attribute: .trailing,
+        relatedBy: .equal,
         toItem: self,
         attribute: .trailing,
         multiplier: 1,
         constant: 0)
         let botomConstraint = NSLayoutConstraint(
-            item: table2,
-            attribute: .bottom,
-            relatedBy: .equal,
+        item: table2,
+        attribute: .bottom,
+        relatedBy: .equal,
         toItem: tabBarView,
         attribute: .top,
         multiplier: 1,
         constant: 0)
-        
         botomConstraint.isActive = true
         trailingConstraint.isActive = true
         TopConstraint.isActive = true
         leadingConstraint.isActive = true
-        
     }
    
     private func setupTrending() {
@@ -354,53 +315,11 @@ final class MainView: UIView {
             attribute: .width,
             multiplier: 1,
             constant: 360)
-        
         widgtConstraint.isActive = true
-            heightConstraint.isActive = true
+        heightConstraint.isActive = true
         TopConstraint.isActive = true
         leadingConstraint.isActive = true
     }
-    
-//    private func setupImageStackView() {
-//        let TopConstraint = NSLayoutConstraint(
-//            item: imageStackViews,
-//            attribute: .top,
-//            relatedBy: .equal,
-//            toItem: self,
-//            attribute: .topMargin,
-//            multiplier: 1,
-//            constant: 180)
-//        let leadingConstraint = NSLayoutConstraint(
-//            item: imageStackViews,
-//            attribute: .leading,
-//            relatedBy: .equal,
-//            toItem: self,
-//            attribute: .leading,
-//            multiplier: 1,
-//            constant: 16)
-//
-//        let height = NSLayoutConstraint(
-//            item: imageStackViews,
-//            attribute: .height,
-//            relatedBy: .equal,
-//            toItem: .none,
-//            attribute: .height,
-//            multiplier: 1,
-//            constant: 164)
-//        let width = NSLayoutConstraint(
-//            item: imageStackViews,
-//            attribute: .width,
-//            relatedBy: .equal,
-//            toItem: .none,
-//            attribute: .width,
-//            multiplier: 1,
-//            constant: 164)
-//        width.isActive = true
-//        height.isActive = true
-//        TopConstraint.isActive = true
-//        leadingConstraint.isActive = true
-//    }
-        
     private func setupPopular() {
         let TopConstraint = NSLayoutConstraint(
             item: popularButton,
@@ -440,68 +359,22 @@ final class MainView: UIView {
         leadingConstraint.isActive = true
     }
     
-   
-//    private func setupNewEpisodes() {
-//        let descriptiontopConstraint = NSLayoutConstraint(
-//                           item: newEpisode,
-//                           attribute: .topMargin,
-//                           relatedBy: .equal,
-//                           toItem: self,
-//                           attribute: .topMargin,
-//                           multiplier: 1,
-//                           constant: 385)
-//        let descriptionleadingConstraint = NSLayoutConstraint(
-//            item: newEpisode,
-//            attribute: .leading,
-//            relatedBy: .equal,
-//            toItem: self,
-//            attribute: .leading,
-//            multiplier: 1,
-//            constant: 16)
-//
-//        descriptiontopConstraint.isActive = true
-//        descriptionleadingConstraint.isActive = true
-//    }
-//    private func billburrConstraint() {
-//        let topImage = NSLayoutConstraint(
-//                           item: billburr,
-//                           attribute: .topMargin,
-//                           relatedBy: .equal,
-//                           toItem: self,
-//                           attribute: .topMargin,
-//                           multiplier: 1,
-//                           constant: 189)
-//        let trailingImage = NSLayoutConstraint(
-//            item: billburr,
-//            attribute: .leading,
-//            relatedBy: .equal,
-//            toItem: self,
-//            attribute: .leading,
-//            multiplier: 1,
-//            constant: 1)
-//        topImage.isActive = true
-//        trailingImage.isActive = true
-//    }
    private func configureGesturesImage() {
         let tapGestureLong = UILongPressGestureRecognizer(target: self, action: #selector(imageLongDidTap))
         userImage.addGestureRecognizer(tapGestureLong)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageDidTap))
         userImage.addGestureRecognizer(tapGesture)
     }
-    
     @objc private func imageLongDidTap(_ gesture: UILongPressGestureRecognizer) {
         userImage.heightAnchor.constraint(equalToConstant: 124).isActive = true
         userImage.widthAnchor.constraint(equalToConstant: 124).isActive = true
     }
-    
     @objc private func imageDidTap(_ gesture: UITapGestureRecognizer) {
         userImage.heightAnchor.constraint(equalToConstant: 62).isActive = true
         userImage.widthAnchor.constraint(equalToConstant: 62).isActive = true
     }
     
     private func setupUserImageConstraint() {
-
-    
         let topImage = NSLayoutConstraint(
                            item: userImage,
                            attribute: .topMargin,
@@ -530,18 +403,7 @@ final class MainView: UIView {
                            attribute: .topMargin,
                            multiplier: 1,
                            constant: 28)
-//        let headerleadingConstraint = NSLayoutConstraint(
-//            item: headerLabel,
-//            attribute: .leading,
-//            relatedBy: .equal,
-//            toItem: self,
-//            attribute: .leading,
-//            multiplier: 1,
-//            constant: 16)
-//
         headertopConstraint.isActive = true
-//        headerleadingConstraint.isActive = true
-   
     }
     private func setupDescriptionLabel() {
         let descriptiontopConstraint = NSLayoutConstraint(
@@ -572,10 +434,6 @@ final class MainView: UIView {
         descriptiontopConstraint.isActive = true
         descriptionleadingConstraint.isActive = true
     }
-    
-    
-    
-    
     private func billburrConstraint() {
             let topImage = NSLayoutConstraint(
                                item: billburr,
@@ -616,15 +474,7 @@ final class MainView: UIView {
             topImage.isActive = true
             trailingImage.isActive = true
         }
-   
-    
-    
-    
-    
-    
-    
-    
-    
+
     private func configureImageStackView() {
         imageStackViews.addArrangedSubview(billburr)
         imageStackViews.addArrangedSubview(comedians)
@@ -644,18 +494,10 @@ final class MainView: UIView {
         descriptionLabel.font = UIFont(name: "Futura-Bold", size: 28)
         descriptionLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
     }
-//    private func configureNewEpisodes() {
-//        newEpisode.numberOfLines = 0
-//        newEpisode.textAlignment = .left
-//        newEpisode.font = UIFont(name: "Futura-Bold", size: 26)
-//        newEpisode.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-//    }
     private func configureTupBar() {
             tabBarView.backgroundColor = .black
             tabBarView.layer.cornerRadius = 32
         }
-//
-//    }
     private func configurePopuparButton() {
         popularButton.setTitleColor(UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1), for: .normal)
         popularButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 0.6), for: .highlighted)
@@ -666,7 +508,7 @@ final class MainView: UIView {
         popularButton.addTarget(self, action: #selector(addPopularButtonDidTup), for: .touchUpInside)
     }
     @objc private func addPopularButtonDidTup() {
-        delegate?.addPopularButtonDidTup()
+        delegate?.addPopularButtonDidTap()
         popularButton.setTitleColor(UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1), for: .normal)
         popularButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 0.6), for: .highlighted)
         popularButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
@@ -690,7 +532,7 @@ final class MainView: UIView {
         recent.addTarget(self, action: #selector(addRecentButtonDidTup), for: .touchUpInside)
     }
     @objc private func addRecentButtonDidTup() {
-        delegate?.addRecentButtonDidTup()
+        delegate?.addRecentButtonDidTap()
         recent.setTitleColor(UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1), for: .normal)
         recent.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 0.6), for: .highlighted)
         recent.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
@@ -739,7 +581,7 @@ final class MainView: UIView {
     }
     
     @objc private func addTrendingButtonDidTup() {
-        delegate?.addTrendingButtonDidTup()
+        delegate?.addTrendingButtonDidTap()
         trending.setTitleColor(UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1), for: .normal)
         trending.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 0.6), for: .highlighted)
         trending.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)

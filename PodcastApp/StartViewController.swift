@@ -16,7 +16,7 @@ class StartViewController: UIViewController, NameUserChancheListening, StartScre
     func nameUserChange(_ text: String) {
         userInfoStart.name = text
         }
-    func addButtonDidTup() {
+    func addButtonDidTap() {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
         if let controller = controller as? MainViewController {

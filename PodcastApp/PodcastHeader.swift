@@ -11,7 +11,7 @@ final class PodcastHeader: UIView {
 
 
     private let headerLabel = UILabel()
-   private let buttom = UIButton()
+   private let button = UIButton()
 
     var title: String? {
         get { headerLabel.text }
@@ -31,16 +31,16 @@ private extension PodcastHeader {
         addSubviews()
         configureLabel()
         setupConstraintsHeader()
-        setupConstraintsButtom()
+        setupConstraintsButton()
         configureButton()
         configureButton()
         backgroundColor = .white
     }
     func addSubviews() {
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
-        buttom.translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = false
         addSubview(headerLabel)
-        addSubview(buttom)
+        addSubview(button)
     }
     func setupConstraintsHeader() {
         let topConstraint = NSLayoutConstraint(
@@ -54,12 +54,12 @@ private extension PodcastHeader {
         
     }
     
-    func setupConstraintsButtom() {
+    func setupConstraintsButton() {
         let topConstraint = NSLayoutConstraint(
-            item: buttom, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+            item: button, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
       
         let trailingConstraint = NSLayoutConstraint(
-            item: buttom, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -16)
+            item: button, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -16)
         
         [trailingConstraint, topConstraint].forEach { $0.isActive = true }
         
@@ -71,9 +71,9 @@ private extension PodcastHeader {
         headerLabel.font = UIFont(name: "Futura-Bold", size: 26)
     }
     func configureButton() {
-        buttom.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1) , for: .normal)
-        buttom.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 0.6) , for: .highlighted)
-        buttom.titleLabel?.font = UIFont(name: "Roboto", size: 16)
-        buttom.setTitle("more", for: .normal)
+        button.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1) , for: .normal)
+        button.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 0.6) , for: .highlighted)
+        button.titleLabel?.font = UIFont(name: "Roboto", size: 16)
+        button.setTitle("more", for: .normal)
     }
 }

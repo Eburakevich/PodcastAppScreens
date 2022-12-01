@@ -102,8 +102,8 @@ final class MainView: UIView {
         setupRecent()
         setupFeatured()
         setupTrending()
-        setupTupBar()
-        setupTupBarButtons()
+        setupTabBar()
+        setupTabBarButtons()
         setupTable2()
         comicsConstraint()
         billburrConstraint()
@@ -262,7 +262,7 @@ final class MainView: UIView {
         TopConstraint.isActive = true
         leadingConstraint.isActive = true
     }
-    private func setupTupBarButtons() {
+    private func setupTabBarButtons() {
             let TopConstraint = NSLayoutConstraint(
                 item: tabBarStackView,
                 attribute: .bottom,
@@ -282,7 +282,7 @@ final class MainView: UIView {
         TopConstraint.isActive = true
         leadingConstraint.isActive = true
     }
-    private func setupTupBar() {
+    private func setupTabBar() {
         let TopConstraint = NSLayoutConstraint(
             item: tabBarView,
             attribute: .bottom,
@@ -608,9 +608,9 @@ final class MainView: UIView {
         homeButton.backgroundColor = .clear
         homeButton.setImage(UIImage(named: "home"), for: .normal)
         homeButton.tintColor = UIColor(red: 0.918, green: 0.918, blue: 0.918, alpha: 1)
-        homeButton.addTarget(self, action: #selector(addHomeButtonDidTup), for: .touchUpInside)
+        homeButton.addTarget(self, action: #selector(addHomeButtonDidTap), for: .touchUpInside)
     }
-    @objc private func addHomeButtonDidTup() {
+    @objc private func addHomeButtonDidTap() {
         homeButton.tintColor = UIColor(red: 0.918, green: 0.918, blue: 0.918, alpha: 1)
         searchButton.tintColor = UIColor(red: 0.363, green: 0.363, blue: 0.363, alpha: 1)
         likeButton.tintColor = UIColor(red: 0.363, green: 0.363, blue: 0.363, alpha: 1)
@@ -620,9 +620,9 @@ final class MainView: UIView {
         searchButton.backgroundColor = .clear
         searchButton.setImage(UIImage(named: "search"), for: .normal)
         searchButton.tintColor = UIColor(red: 0.363, green: 0.363, blue: 0.363, alpha: 1)
-        searchButton.addTarget(self, action: #selector(addSearchButtonDidTup), for: .touchUpInside)
+        searchButton.addTarget(self, action: #selector(addSearchButtonDidTap), for: .touchUpInside)
     }
-    @objc private func addSearchButtonDidTup() {
+    @objc private func addSearchButtonDidTap() {
         searchButton.tintColor = UIColor(red: 0.918, green: 0.918, blue: 0.918, alpha: 1)
         homeButton.tintColor = UIColor(red: 0.363, green: 0.363, blue: 0.363, alpha: 1)
         likeButton.tintColor = UIColor(red: 0.363, green: 0.363, blue: 0.363, alpha: 1)
@@ -632,9 +632,9 @@ final class MainView: UIView {
         likeButton.backgroundColor = .clear
         likeButton.setImage(UIImage(named: "heart"), for: .normal)
         likeButton.tintColor = UIColor(red: 0.363, green: 0.363, blue: 0.363, alpha: 1)
-        likeButton.addTarget(self, action: #selector(addLikeButtonDidTup), for: .touchUpInside)
+        likeButton.addTarget(self, action: #selector(addLikeButtonDidTap), for: .touchUpInside)
     }
-    @objc private func addLikeButtonDidTup() {
+    @objc private func addLikeButtonDidTap() {
         likeButton.tintColor = UIColor(red: 0.918, green: 0.918, blue: 0.918, alpha: 1)
         homeButton.tintColor = UIColor(red: 0.363, green: 0.363, blue: 0.363, alpha: 1)
         searchButton.tintColor = UIColor(red: 0.363, green: 0.363, blue: 0.363, alpha: 1)
@@ -644,9 +644,9 @@ final class MainView: UIView {
         profileButton.backgroundColor = .clear
         profileButton.setImage(UIImage(named: "profil"), for: .normal)
         profileButton.tintColor = UIColor(red: 0.363, green: 0.363, blue: 0.363, alpha: 1)
-        profileButton.addTarget(self, action: #selector(addProfileButtonDidTup), for: .touchUpInside)
+        profileButton.addTarget(self, action: #selector(addProfileButtonDidTap), for: .touchUpInside)
     }
-    @objc private func addProfileButtonDidTup() {
+    @objc private func addProfileButtonDidTap() {
         profileButton.tintColor = UIColor(red: 0.918, green: 0.918, blue: 0.918, alpha: 1)
         homeButton.tintColor = UIColor(red: 0.363, green: 0.363, blue: 0.363, alpha: 1)
         searchButton.tintColor = UIColor(red: 0.363, green: 0.363, blue: 0.363, alpha: 1)

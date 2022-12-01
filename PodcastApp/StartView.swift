@@ -12,7 +12,7 @@ protocol NameUserChancheListening: AnyObject {
     func nameUserChange(_ text: String)
 }
 protocol StartScreenActionResponsible: AnyObject {
-    func addButtonDidTup()
+    func addButtonDidTap()
 }
 
 class StartView: UIView {
@@ -104,10 +104,10 @@ class StartView: UIView {
         buttonStarted.setTitleColor(UIColor(red: 1, green: 0.992, blue: 0.992, alpha: 0.6) , for: .highlighted)
         buttonStarted.setTitle("Get started", for: .normal)
         buttonStarted.titleLabel?.font = UIFont(name: "Roboto-Medium", size: 24)
-        buttonStarted.addTarget(self, action: #selector(addButtonDidTup), for: .touchUpInside)
+        buttonStarted.addTarget(self, action: #selector(addButtonDidTap), for: .touchUpInside)
     }
-    @objc private func addButtonDidTup() {
-        delegateStart?.addButtonDidTup()
+    @objc private func addButtonDidTap() {
+        delegateStart?.addButtonDidTap()
     }
     private func configureButtonImage () {
             buttonImage.tintColor = .black
